@@ -10,11 +10,11 @@ class Config:
     # Clave secreta para proteger sesiones y otros datos
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'deberia-cambiar-esta-clave-por-defecto-en-produccion' #En este caso es "mequierotitular"
 
-    # Configuración de la base de datos desde la variable de entorno 'mysql+mysqlconnector://root:pass@localhost/taller_ford_db'
+    # Configuración de la base de datos desde la variable de entorno
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-
+    
+    # Solución para el error 'Access Denied' en Railway
+    SQLALCHEMY_ENGINE_OPTIONS = {'pool_recycle': 280}
+    
     # Desactiva esta característica de Flask-SQLAlchemy que no se usará y consume demasiados recursos:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-
-    
