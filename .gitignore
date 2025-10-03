@@ -1,0 +1,16 @@
+# Entorno virtual
+venv/
+
+# Archivos de caché python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de configuración local
+.env
+
+# Otros
+.DS_Store
+*.db
+*.sqlite3
+/instance/
